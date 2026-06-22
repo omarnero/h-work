@@ -251,12 +251,12 @@ function App() {
                 </svg>
               </a>
 
-              <button className="btn btn-outline btn-large">
+              <a className="btn btn-outline btn-large" href='#how-it-works'>
                 How It Works
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" style={{ width: '14px', height: '14px', marginLeft: '4px' }}>
                   <path d="M8 5v14l11-7z" />
                 </svg>
-              </button>
+              </a>
             </div>
 
             <div className="hero-benefits">
