@@ -181,8 +181,8 @@ function App() {
         </ul>
 
         <div className="nav-actions">
-          <button className="btn btn-outline">Log In</button>
-          <button className="btn btn-primary">Sign Up</button>
+          <a href='https://consumertestconnect.com/cash-750' className="btn btn-outline">Log In</a>
+          <a href='https://consumertestconnect.com/cash-750' className="btn btn-primary">Sign Up</a>
           <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -216,9 +216,9 @@ function App() {
           zIndex: 100
         }}>
           {navItems.map((item, idx) => (
-            <a 
-              key={idx} 
-              href={item.href} 
+            <a
+              key={idx}
+              href={item.href}
               className="nav-link"
               onClick={() => setMobileMenuOpen(false)}
               style={{ fontSize: '1.1rem', fontWeight: 500 }}
@@ -238,19 +238,19 @@ function App() {
             <h1 className="hero-title-win">WIN</h1>
             <div className="hero-title-amount">$750</div>
             <h2 className="hero-title-cashapp">CASH APP <span>CASH!</span></h2>
-            
+
             <p className="hero-description">
               Complete simple tasks, earn entries and be the next winner!
             </p>
 
             <div className="hero-buttons">
-              <button className="btn btn-primary btn-large">
+              <a href='https://consumertestconnect.com/cash-750' className="btn btn-primary btn-large">
                 Sign Up & Enter Now
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </button>
-              
+              </a>
+
               <button className="btn btn-outline btn-large">
                 How It Works
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" style={{ width: '14px', height: '14px', marginLeft: '4px' }}>
@@ -338,7 +338,7 @@ function App() {
                     <h3 className="step-title">{step.title}</h3>
                     <p className="step-desc">{step.desc}</p>
                   </div>
-                  
+
                   {idx < steps.length - 1 && (
                     <div className="step-arrow">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
@@ -376,14 +376,14 @@ function App() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="cta-banner-right">
-                <button className="btn btn-primary btn-large">
+                <a href="https://consumertestconnect.com/cash-750" className="btn btn-primary btn-large">
                   Sign Up & Enter Now
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: '18px', height: '18px', strokeWidth: 2.5 }}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </button>
+                </a>
               </div>
             </div>
           </div>
