@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Home.css';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 function Home() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     function hndLogin() {
         // navigate('/login');
