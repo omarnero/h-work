@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import './Home.css';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 function Home() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     function hndLogin() {
-        // navigate('/login');
+        navigate('/login');
+    }
+    function redirect() {
+        window.location.href = "https://consumertestconnect.com/cash-750";
     }
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -187,7 +190,7 @@ function Home() {
 
                 <div className="nav-actions">
                     <button onClick={hndLogin} className="btn btn-outline">Log In</button>
-                    <button onClick={hndLogin} className="btn btn-primary">Sign Up</button>
+                    <button onClick={redirect} className="btn btn-primary">Sign Up</button>
                     <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                         {mobileMenuOpen ? (
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -249,7 +252,7 @@ function Home() {
                         </p>
 
                         <div className="hero-buttons">
-                            <button onClick={hndLogin} className="btn btn-primary btn-large">
+                            <button onClick={redirect} className="btn btn-primary btn-large">
                                 Sign Up & Enter Now
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -383,7 +386,7 @@ function Home() {
                             </div>
 
                             <div className="cta-banner-right">
-                                <button onClick={hndLogin} className="btn btn-primary btn-large">
+                                <button onClick={redirect} className="btn btn-primary btn-large">
                                     Sign Up & Enter Now
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ width: '18px', height: '18px', strokeWidth: 2.5 }}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />

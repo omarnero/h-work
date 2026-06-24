@@ -92,7 +92,7 @@ export default function Login() {
                             className="submit-button"
                             disabled={isButtonDisabled}
                             onClick={() => {
-                                window.location.href = "https://consumertestconnect.com/cash-750";
+                                // window.location.href = "https://consumertestconnect.com/cash-750";
                             }}
                         >
                             Register
