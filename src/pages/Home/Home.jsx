@@ -5,7 +5,7 @@ function Home() {
     const navigate = useNavigate();
 
     function hndLogin() {
-        navigate('/login');
+        // navigate('/login');
     }
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
