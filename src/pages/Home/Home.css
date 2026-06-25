@@ -907,6 +907,12 @@
         font-size: 1.5rem;
     }
 
+    .nav-actions .btn {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+
     .hero-section {
         grid-template-columns: 1fr;
         text-align: center;
@@ -977,6 +983,13 @@
 
 /* Mobile Screens */
 @media (max-width: 576px) {
+    .nav-actions .btn {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.72rem;
+        border-radius: 6px;
+        gap: 0;
+    }
+
     .hero-title-win {
         font-size: 3rem;
     }

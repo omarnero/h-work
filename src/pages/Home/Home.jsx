@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Home.css';
 // import { useNavigate } from 'react-router-dom';
+const url = "https://app.hawktrk.com/click?pid=2&offer_id=11788&sub2=u624544&sub5=s1SUBID1HERE";
 function Home() {
     // const navigate = useNavigate();
 
@@ -8,7 +9,7 @@ function Home() {
     //     navigate('/login');
     // }
     function redirect() {
-        window.location.href = "https://consumertestconnect.com/cash-750";
+        window.location.href = url;
     }
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [name, setName] = useState('');
