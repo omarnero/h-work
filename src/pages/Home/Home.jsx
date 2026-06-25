@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 function Home() {
     const navigate = useNavigate();
 
-    function hndLogin() {
-        navigate('/login');
-    }
+    // function hndLogin() {
+    //     navigate('/login');
+    // }
     function redirect() {
         window.location.href = "https://consumertestconnect.com/cash-750";
     }
