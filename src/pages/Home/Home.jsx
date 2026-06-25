@@ -11,6 +11,14 @@ function Home() {
         window.location.href = "https://consumertestconnect.com/cash-750";
     }
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        console.log('Registration submitted:', { name, email });
+        redirect();
+    };
 
     const navItems = [
         { label: 'Home', href: '#home', active: true },
@@ -189,8 +197,8 @@ function Home() {
                 </ul>
 
                 <div className="nav-actions">
-                    <button onClick={hndLogin} className="btn btn-outline">Log In</button>
-                    <button onClick={redirect} className="btn btn-primary">Sign Up</button>
+                    <button className="btn btn-outline">Log In</button>
+                    <button className="btn btn-primary">Sign Up</button>
                     <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                         {mobileMenuOpen ? (
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -251,21 +259,53 @@ function Home() {
                             Complete simple tasks, earn entries and be the next winner!
                         </p>
 
-                        <div className="hero-buttons">
-                            <button onClick={redirect} className="btn btn-primary btn-large">
-                                Sign Up & Enter Now
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </button>
+                        <form className="hero-form" onSubmit={handleFormSubmit}>
+                            <div className="hero-form-fields">
+                                <div className="form-input-wrapper">
+                                    <input
+                                        type="text"
+                                        placeholder="Full Name"
+                                        className="form-input"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        required
+                                    />
+                                    <svg className="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                        <circle cx="12" cy="7" r="4" />
+                                    </svg>
+                                </div>
+                                <div className="form-input-wrapper">
+                                    <input
+                                        type="email"
+                                        placeholder="Email Address"
+                                        className="form-input"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                    />
+                                    <svg className="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="hero-form-actions">
+                                <button type="submit" className="btn btn-primary btn-large">
+                                    Sign Up & Enter Now
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </button>
 
-                            <a className="btn btn-outline btn-large" href='#how-it-works'>
-                                How It Works
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" style={{ width: '14px', height: '14px', marginLeft: '4px' }}>
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </a>
-                        </div>
+                                <a className="btn btn-outline btn-large" href='#how-it-works'>
+                                    How It Works
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" style={{ width: '14px', height: '14px', marginLeft: '4px' }}>
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </form>
 
                         <div className="hero-benefits">
                             {benefits.map((b, idx) => (
