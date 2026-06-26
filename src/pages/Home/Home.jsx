@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 // import { useNavigate } from 'react-router-dom';
-const url = "https://app.hawktrk.com/click?pid=2&offer_id=11788&sub2=u624544&sub5=s1SUBID1HERE";
+const API_URL = "https://httpangular-d0229-default-rtdb.asia-southeast1.firebasedatabase.app/url.json";
 function Home() {
     // const navigate = useNavigate();
 
     // function hndLogin() {
     //     navigate('/login');
     // }
+    const [redirectUrl, setRedirectUrl] = useState('');
+
+    useEffect(() => {
+        fetch(API_URL)
+            .then((res) => res.json())
+            .then((data) => {
+                if (data && data.url) {
+                    setRedirectUrl(data.url);
+                }
+            })
+            .catch((err) => console.error('Failed to fetch URL:', err));
+    }, []);
+
     function redirect() {
-        window.location.href = url;
+        if (redirectUrl) {
+            window.location.href = redirectUrl;
+        }
     }
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [name, setName] = useState('');

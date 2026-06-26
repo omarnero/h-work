@@ -1,0 +1,223 @@
+/* ── Page wrapper ─────────────────────────────────────── */
+.cup-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  padding: 2rem;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.cup-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem 2rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  animation: cup-fadein 0.5s ease both;
+}
+
+@keyframes cup-fadein {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)  scale(1); }
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.cup-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cup-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.45);
+  margin-bottom: 1.25rem;
+}
+
+.cup-icon svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+}
+
+.cup-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.02em;
+}
+
+.cup-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* ── Form ─────────────────────────────────────────────── */
+.cup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Field ────────────────────────────────────────────── */
+.cup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cup-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cup-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cup-input-icon {
+  position: absolute;
+  left: 14px;
+  display: flex;
+  color: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.cup-input-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.cup-input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition:
+    border-color 0.25s,
+    background 0.25s,
+    box-shadow 0.25s;
+  box-sizing: border-box;
+}
+
+.cup-input::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+.cup-input:focus {
+  border-color: #7c3aed;
+  background: rgba(124, 58, 237, 0.08);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+}
+
+.cup-input:focus + .cup-input-icon,
+.cup-input-wrapper:focus-within .cup-input-icon {
+  color: #a78bfa;
+}
+
+/* ── Alert ────────────────────────────────────────────── */
+.cup-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  animation: cup-fadein 0.3s ease both;
+}
+
+.cup-alert-icon {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.cup-alert--success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #6ee7b7;
+}
+
+.cup-alert--error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+}
+
+/* ── Submit Button ────────────────────────────────────── */
+.cup-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    opacity 0.2s;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.cup-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.55);
+}
+
+.cup-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.cup-btn--loading,
+.cup-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Spinner ──────────────────────────────────────────── */
+.cup-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: cup-spin 0.7s linear infinite;
+}
+
+@keyframes cup-spin {
+  to { transform: rotate(360deg); }
+}
