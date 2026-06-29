@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-// import { useNavigate } from 'react-router-dom';
+
 const API_URL = "https://httpangular-d0229-default-rtdb.asia-southeast1.firebasedatabase.app/url.json";
 function Home() {
-    // const navigate = useNavigate();
 
-    // function hndLogin() {
-    //     navigate('/login');
-    // }
     const [redirectUrl, setRedirectUrl] = useState('');
 
     useEffect(() => {
