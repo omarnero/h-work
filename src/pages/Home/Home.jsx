@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 
 const API_URL = "https://httpangular-d0229-default-rtdb.asia-southeast1.firebasedatabase.app/url.json";
+const API_IMAGE_URL = "https://httpangular-d0229-default-rtdb.asia-southeast1.firebasedatabase.app/img.json";
 function Home() {
 
     const [redirectUrl, setRedirectUrl] = useState('');
-
+    const [imageUrl, setImageUrl] = useState('');
+    const [imageLoading, setImageLoading] = useState(true);
     useEffect(() => {
         fetch(API_URL)
             .then((res) => res.json())
@@ -15,6 +17,17 @@ function Home() {
                 }
             })
             .catch((err) => console.error('Failed to fetch URL:', err));
+    }, []);
+    useEffect(() => {
+        fetch(API_IMAGE_URL)
+            .then((res) => res.json())
+            .then((data) => {
+                if (data && data.img) {
+                    setImageUrl(data.img);
+                }
+            })
+            .catch((err) => console.error('Failed to fetch image:', err))
+            .finally(() => setImageLoading(false));
     }, []);
 
     function redirect() {
@@ -263,10 +276,20 @@ function Home() {
                 <section id="home" className="hero-section">
                     {/* Hero Left Content */}
                     <div className="hero-content">
-                        <h1 className="hero-title-win">WIN</h1>
-                        <div className="hero-title-amount">$750</div>
-                        <h2 className="hero-title-cashapp">CASH APP <span>CASH!</span></h2>
 
+                        {imageLoading ? (
+                            <div className="hero-image-skeleton" aria-label="Loading image…">
+                                <div className="hero-image-skeleton__shimmer" />
+                            </div>
+                        ) : (
+                            imageUrl && (
+                                <img
+                                    src={imageUrl}
+                                    alt="Promo"
+                                    className="hero-main-image hero-main-image--loaded"
+                                />
+                            )
+                        )}
                         <p className="hero-description">
                             Complete simple tasks, earn entries and be the next winner!
                         </p>

@@ -177,6 +177,55 @@
     z-index: 5;
 }
 
+.hero-content .hero-main-image {
+    width: 360px;
+    min-height: 250px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hero-content .hero-main-image--loaded {
+    opacity: 1;
+}
+
+/* ── Image loading skeleton ──────────────────────────── */
+.hero-image-skeleton {
+    width: 360px;
+    height: 250px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.06);
+    position: relative;
+}
+
+.hero-image-skeleton__shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.12) 40%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.12) 60%,
+            transparent 100%);
+    background-size: 200% 100%;
+    animation: hero-shimmer 1.4s ease infinite;
+}
+
+@keyframes hero-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 .hero-title-win {
     font-size: 5rem;
     font-weight: 900;
@@ -1170,7 +1219,7 @@
     box-shadow: 0 0 15px rgba(0, 215, 80, 0.15), inset 0 0 5px rgba(0, 215, 80, 0.05);
 }
 
-.form-input:focus + .input-icon {
+.form-input:focus+.input-icon {
     color: var(--primary-green);
 }
 
@@ -1203,7 +1252,7 @@
         gap: 0.8rem;
         width: 100%;
     }
-    
+
     .hero-form-actions .btn {
         width: 100%;
     }

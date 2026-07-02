@@ -1,0 +1,331 @@
+/* ── Page wrapper ─────────────────────────────────────── */
+.cip-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  padding: 2rem;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.cip-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem 2rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  animation: cip-fadein 0.5s ease both;
+}
+
+@keyframes cip-fadein {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)  scale(1); }
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.cip-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  box-shadow: 0 8px 24px rgba(6, 182, 212, 0.45);
+  margin-bottom: 1.25rem;
+}
+
+.cip-icon svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+}
+
+.cip-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.02em;
+}
+
+.cip-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* ── Form ─────────────────────────────────────────────── */
+.cip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Field ────────────────────────────────────────────── */
+.cip-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cip-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cip-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cip-input-icon {
+  position: absolute;
+  left: 14px;
+  display: flex;
+  color: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.cip-input-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.cip-input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition:
+    border-color 0.25s,
+    background 0.25s,
+    box-shadow 0.25s;
+  box-sizing: border-box;
+}
+
+.cip-input::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+.cip-input:focus {
+  border-color: #06b6d4;
+  background: rgba(6, 182, 212, 0.08);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.25);
+}
+
+.cip-input:focus + .cip-input-icon,
+.cip-input-wrapper:focus-within .cip-input-icon {
+  color: #67e8f9;
+}
+
+/* ── Alert ────────────────────────────────────────────── */
+.cip-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  animation: cip-fadein 0.3s ease both;
+}
+
+.cip-alert-icon {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.cip-alert--success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #6ee7b7;
+}
+
+.cip-alert--error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+}
+
+/* ── Submit / Primary Button ──────────────────────────── */
+.cip-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    opacity 0.2s;
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+}
+
+.cip-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(6, 182, 212, 0.55);
+}
+
+.cip-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.cip-btn--loading,
+.cip-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Secondary (Browse) Button ────────────────────────── */
+.cip-btn--secondary {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cip-btn--secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(6, 182, 212, 0.55);
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.2);
+  color: #67e8f9;
+}
+
+/* ── Spinner ──────────────────────────────────────────── */
+.cip-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: cip-spin 0.7s linear infinite;
+}
+
+@keyframes cip-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Shake animation (wrong password) ────────────────── */
+@keyframes cip-shake {
+  0%, 100% { transform: translateX(0); }
+  15%       { transform: translateX(-8px); }
+  30%       { transform: translateX(8px); }
+  45%       { transform: translateX(-6px); }
+  60%       { transform: translateX(6px); }
+  75%       { transform: translateX(-3px); }
+  90%       { transform: translateX(3px); }
+}
+
+.cip-card--shake {
+  animation: cip-shake 0.6s ease both;
+}
+
+/* ── Lock icon variant ────────────────────────────────── */
+.cip-icon--lock {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.45);
+}
+
+/* ── Eye toggle button (show/hide password) ───────────── */
+.cip-eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.2s;
+}
+
+.cip-eye-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cip-eye-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Authenticated badge ──────────────────────────────── */
+.cip-auth-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.cip-auth-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+  animation: cip-pulse 1.6s ease infinite;
+  flex-shrink: 0;
+}
+
+@keyframes cip-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.cip-lock-again {
+  margin-left: auto;
+  background: none;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 6px;
+  color: #6ee7b7;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.2rem 0.55rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.cip-lock-again:hover {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.7);
+}
