@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./ChangeImagePage.css";
 
 const API_URL =
   "https://httpangular-d0229-default-rtdb.asia-southeast1.firebasedatabase.app/img.json";
 
 const CORRECT_PASSWORD = "cashapp$5";
-
 export default function ChangeImagePage() {
+  const navigate = useNavigate();
   // ── Password gate ──────────────────────────────────────
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
@@ -52,6 +53,8 @@ export default function ChangeImagePage() {
       setStatus("success");
       setMessage("Image URL updated successfully!");
       setImgUrl("");
+      navigate("/");
+      window.location.reload();
     } catch (err) {
       setStatus("error");
       setMessage(err.message || "Something went wrong. Please try again.");
