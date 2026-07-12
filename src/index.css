@@ -9,12 +9,12 @@ html {
   --bg-dark: #07090e;
   --bg-card: #0d121a;
   --bg-card-border: #182230;
-  --primary-green: #00d750;
-  --primary-green-glow: rgba(0, 215, 80, 0.45);
-  --primary-green-hover: #00ff5f;
+  --primary-blue: #0066ff;
+  --primary-blue-glow: rgba(0, 102, 255, 0.45);
+  --primary-blue-hover: #3385ff;
   --text-white: #ffffff;
   --text-muted: #8b9bb0;
-  --glow-color: rgba(0, 215, 80, 0.2);
+  --glow-color: rgba(0, 102, 255, 0.2);
 }
 
 * {

