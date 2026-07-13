@@ -153,7 +153,7 @@ function Home() {
 
     const stats = [
         {
-            value: '250,000+',
+            value: '20000+',
             label: 'Happy Users',
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
@@ -165,7 +165,7 @@ function Home() {
             ),
         },
         {
-            value: '1,500,000+',
+            value: '2500+',
             label: 'Tasks Completed',
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
@@ -175,7 +175,7 @@ function Home() {
             ),
         },
         {
-            value: '$250,000+',
+            value: '10000+',
             label: 'Paid to Winners',
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
