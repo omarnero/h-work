@@ -137,8 +137,8 @@ function Home() {
         },
         {
             number: '4',
-            title: 'Win $750',
-            desc: 'One lucky winner will receive $750 Cash App cash!',
+            title: 'Win $100',
+            desc: 'One lucky winner will receive $100 Cash App cash!',
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="8" width="18" height="14" rx="2" ry="2" />
